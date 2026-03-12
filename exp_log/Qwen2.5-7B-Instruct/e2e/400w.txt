@@ -1,0 +1,3 @@
+Prefill. latency: 2.04255 s, throughput:  16042.67 token/s
+Decode.  median latency: 0.01552 s, median throughput:    515.45 token/s
+Total. latency:  3.027 s, throughput:  10995.06 token/s

@@ -16,14 +16,22 @@ Memory-efficient attention for prefill.
 It supports page size = 1 and prefill with KV cache (i.e. extend).
 """
 
+import logging
+
 import torch
 import triton
 import triton.language as tl
 
+from sglang.srt.layers.attention.triton_ops.extend_attention_config import (
+    get_attention_configs,
+)
 from sglang.srt.layers.attention.triton_ops.prefill_attention import (
     context_attention_fwd,
 )
 from sglang.srt.utils import is_cuda, is_hip
+
+logger = logging.getLogger(__name__)
+_logged_tuned_config = False
 
 _is_cuda = is_cuda()
 if _is_cuda:
@@ -32,18 +40,27 @@ if _is_cuda:
 _is_hip = is_hip()
 
 
-def _get_block_sizes_for_extend_attention(Lq: int, Lv: int):
+def _get_block_sizes_for_extend_attention(
+    Lq: int, Lv: int, max_len_extend: int = 0
+):
     """
     Get block sizes and configuration for extend attention kernels.
+
+    When SGLANG_ATTENTION_TUNED=1 and a matching config file exists,
+    the tuned BLOCK_M, BLOCK_N, num_warps, num_stages are loaded from
+    the config file (keyed by the closest max_len_extend).  Otherwise
+    the original hardware-based heuristic is used.
 
     Args:
         Lq: Query head dimension
         Lv: Value head dimension
+        max_len_extend: Maximum extend length (used for config lookup)
 
     Returns:
-        tuple: (BLOCK_DMODEL, BLOCK_DPE, BLOCK_DV, BLOCK_M, BLOCK_N, num_warps)
+        tuple: (BLOCK_DMODEL, BLOCK_DPE, BLOCK_DV, BLOCK_M, BLOCK_N,
+                num_warps, num_stages)
     """
-    # Determine BLOCK_DMODEL and BLOCK_DPE based on head dimension
+    # ---- Determine BLOCK_DMODEL and BLOCK_DPE based on head dimension ----
     if Lq == 576:
         BLOCK_DMODEL = 512
         BLOCK_DPE = 64
@@ -59,7 +76,29 @@ def _get_block_sizes_for_extend_attention(Lq: int, Lv: int):
 
     BLOCK_DV = triton.next_power_of_2(Lv)
 
-    # Determine BLOCK_M, BLOCK_N, and num_warps based on hardware
+    # ---- Try loading tuned config ----
+    configs = get_attention_configs(Lq, Lv)
+    if configs is not None and max_len_extend > 0:
+        # Pick the config whose key is closest to max_len_extend
+        best_key = min(configs.keys(), key=lambda x: abs(x - max_len_extend))
+        cfg = configs[best_key]
+        BLOCK_M = cfg["BLOCK_M"]
+        BLOCK_N = cfg["BLOCK_N"]
+        num_warps = cfg["num_warps"]
+        num_stages = cfg["num_stages"]
+        global _logged_tuned_config
+        if not _logged_tuned_config:
+            logger.info(
+                "Using tuned extend attention config (Lq=%d, Lv=%d): "
+                "BLOCK_M=%d, BLOCK_N=%d, num_warps=%d, num_stages=%d "
+                "(matched key=%d for max_len_extend=%d)",
+                Lq, Lv, BLOCK_M, BLOCK_N, num_warps, num_stages,
+                best_key, max_len_extend,
+            )
+            _logged_tuned_config = True
+        return BLOCK_DMODEL, BLOCK_DPE, BLOCK_DV, BLOCK_M, BLOCK_N, num_warps, num_stages
+
+    # ---- Default heuristic (original logic) ----
     if _is_hip:
         BLOCK_M, BLOCK_N = (64, 64)
         num_warps = 4
@@ -93,7 +132,8 @@ def _get_block_sizes_for_extend_attention(Lq: int, Lv: int):
 
         num_warps = 4 if Lq <= 64 else 8
 
-    return BLOCK_DMODEL, BLOCK_DPE, BLOCK_DV, BLOCK_M, BLOCK_N, num_warps
+    num_stages = 1  # default
+    return BLOCK_DMODEL, BLOCK_DPE, BLOCK_DV, BLOCK_M, BLOCK_N, num_warps, num_stages
 
 
 @triton.jit
@@ -573,8 +613,8 @@ def extend_attention_fwd(
     )
 
     # Get block sizes and configuration
-    BLOCK_DMODEL, BLOCK_DPE, BLOCK_DV, BLOCK_M, BLOCK_N, num_warps = (
-        _get_block_sizes_for_extend_attention(Lq, Lv)
+    BLOCK_DMODEL, BLOCK_DPE, BLOCK_DV, BLOCK_M, BLOCK_N, num_warps, num_stages = (
+        _get_block_sizes_for_extend_attention(Lq, Lv, max_len_extend)
     )
 
     sm_scale = sm_scale or 1.0 / (Lq**0.5)
@@ -588,7 +628,6 @@ def extend_attention_fwd(
     HAS_SINK = sinks is not None
 
     grid = (batch_size, head_num, triton.cdiv(max_len_extend, BLOCK_M))
-    num_stages = 1
 
     extra_kargs = {}
     if _is_hip:
@@ -979,8 +1018,8 @@ def extend_attention_fwd_unified(
     Lq, Lv = q.shape[-1], v_buffer.shape[-1]
 
     # Get block sizes and configuration
-    BLOCK_DMODEL, BLOCK_DPE, BLOCK_DV, BLOCK_M, BLOCK_N, num_warps = (
-        _get_block_sizes_for_extend_attention(Lq, Lv)
+    BLOCK_DMODEL, BLOCK_DPE, BLOCK_DV, BLOCK_M, BLOCK_N, num_warps, num_stages = (
+        _get_block_sizes_for_extend_attention(Lq, Lv, max_len_extend)
     )
 
     sm_scale = sm_scale or 1.0 / (Lq**0.5)
@@ -997,7 +1036,6 @@ def extend_attention_fwd_unified(
         window_start_pos = torch.zeros(batch_size, dtype=torch.int32, device=q.device)
 
     grid = (batch_size, head_num, triton.cdiv(max_len_extend, BLOCK_M))
-    num_stages = 1
 
     extra_kargs = {}
     if _is_hip:

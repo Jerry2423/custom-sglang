@@ -156,7 +156,7 @@ Move these files to `sglang/srt/layers/moe/fused_moe_triton/configs/triton_versi
 ### Supported Models
 
 - **Mixtral**: mistralai/Mixtral-8x7B-Instruct-v0.1, mixtral-8x22b
-- **Qwen**: Qwen2-57B, Qwen3-235B, Qwen3VL (MLLM)
+- **Qwen**: Qwen1.5-MoE-A2.7B, Qwen2-57B, Qwen3-235B, Qwen3VL (MLLM)
 - **DeepSeek**: DeepSeek-V2, DeepSeek-V3, DeepSeek-R1
 - **Llama**: Llama4-Vision (MLLM)
 - **DBRX**: databricks/dbrx-instruct

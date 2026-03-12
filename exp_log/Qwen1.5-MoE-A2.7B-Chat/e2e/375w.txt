@@ -1,0 +1,8 @@
+Prefill. latency: 0.57713 s, throughput:  28388.67 token/s
+Decode 0. Batch size: 4, latency: 0.03402 s, throughput:    117.59 token/s
+Decode 1. Batch size: 4, latency: 0.03103 s, throughput:    128.93 token/s
+Decode 2. Batch size: 4, latency: 0.03088 s, throughput:    129.53 token/s
+Decode 3. Batch size: 4, latency: 0.03042 s, throughput:    131.51 token/s
+Decode 4. Batch size: 4, latency: 0.03016 s, throughput:    132.61 token/s
+Decode.  median latency: 0.02983 s, median throughput:    134.10 token/s
+Total. latency:  1.032 s, throughput:  15943.79 token/s

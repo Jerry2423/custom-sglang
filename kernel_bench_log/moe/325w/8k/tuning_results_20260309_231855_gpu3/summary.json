@@ -1,0 +1,2741 @@
+{
+  "num_configs": 105,
+  "latency_stats": {
+    "avg_us": 12957.717824663434,
+    "std_us": 41405.92328781231,
+    "min_us": 3669.1660690307617,
+    "max_us": 253253.61083984375
+  },
+  "configs": [
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 128,
+        "BLOCK_SIZE_N": 256,
+        "BLOCK_SIZE_K": 64,
+        "GROUP_SIZE_M": 1,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 3669.1660690307617,
+      "gpu_metrics": {
+        "power": {
+          "avg": 323.71871428571427,
+          "std": 8.700320050983589
+        },
+        "temperature": {
+          "avg": 54.142857142857146,
+          "std": 0.3541688016605732
+        },
+        "freq": {
+          "avg": 1321.4285714285713,
+          "std": 12.311293362229295
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 128,
+        "BLOCK_SIZE_N": 256,
+        "BLOCK_SIZE_K": 64,
+        "GROUP_SIZE_M": 8,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 3685.9597396850586,
+      "gpu_metrics": {
+        "power": {
+          "avg": 323.6908536585366,
+          "std": 2.980514004001456
+        },
+        "temperature": {
+          "avg": 54,
+          "std": 0.0
+        },
+        "freq": {
+          "avg": 1318.5365853658536,
+          "std": 4.506093435425023
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 128,
+        "BLOCK_SIZE_N": 256,
+        "BLOCK_SIZE_K": 64,
+        "GROUP_SIZE_M": 16,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 3695.9642028808594,
+      "gpu_metrics": {
+        "power": {
+          "avg": 322.62430952380953,
+          "std": 1.51204862626827
+        },
+        "temperature": {
+          "avg": 54,
+          "std": 0.0
+        },
+        "freq": {
+          "avg": 1320,
+          "std": 0.0
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 64,
+        "BLOCK_SIZE_N": 256,
+        "BLOCK_SIZE_K": 64,
+        "GROUP_SIZE_M": 16,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 3957.514228820801,
+      "gpu_metrics": {
+        "power": {
+          "avg": 323.3397073170732,
+          "std": 10.795278204483436
+        },
+        "temperature": {
+          "avg": 53.951219512195124,
+          "std": 0.21808478995509087
+        },
+        "freq": {
+          "avg": 1284.878048780488,
+          "std": 15.948660009466657
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 64,
+        "BLOCK_SIZE_N": 256,
+        "BLOCK_SIZE_K": 64,
+        "GROUP_SIZE_M": 1,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 3984.414749145508,
+      "gpu_metrics": {
+        "power": {
+          "avg": 324.2953414634146,
+          "std": 7.68035487008822
+        },
+        "temperature": {
+          "avg": 54,
+          "std": 0.0
+        },
+        "freq": {
+          "avg": 1296.219512195122,
+          "std": 12.082036655965647
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 128,
+        "BLOCK_SIZE_N": 128,
+        "BLOCK_SIZE_K": 64,
+        "GROUP_SIZE_M": 1,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 3990.5177688598633,
+      "gpu_metrics": {
+        "power": {
+          "avg": 324.0562857142857,
+          "std": 7.273453060862591
+        },
+        "temperature": {
+          "avg": 54.61904761904762,
+          "std": 0.49150743499231975
+        },
+        "freq": {
+          "avg": 1327.857142857143,
+          "std": 11.106077063265483
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 64,
+        "BLOCK_SIZE_N": 256,
+        "BLOCK_SIZE_K": 64,
+        "GROUP_SIZE_M": 8,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 4005.642242431641,
+      "gpu_metrics": {
+        "power": {
+          "avg": 323.5450975609756,
+          "std": 5.324689182501065
+        },
+        "temperature": {
+          "avg": 54,
+          "std": 0.0
+        },
+        "freq": {
+          "avg": 1288.5365853658536,
+          "std": 10.502612915307338
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 128,
+        "BLOCK_SIZE_N": 128,
+        "BLOCK_SIZE_K": 64,
+        "GROUP_SIZE_M": 8,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 4007.127075195313,
+      "gpu_metrics": {
+        "power": {
+          "avg": 323.1809268292683,
+          "std": 4.163085925069549
+        },
+        "temperature": {
+          "avg": 54,
+          "std": 0.0
+        },
+        "freq": {
+          "avg": 1318.5365853658536,
+          "std": 4.506093435425023
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 64,
+        "BLOCK_SIZE_N": 128,
+        "BLOCK_SIZE_K": 64,
+        "GROUP_SIZE_M": 1,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 4007.7004241943364,
+      "gpu_metrics": {
+        "power": {
+          "avg": 323.4670243902439,
+          "std": 6.644197052646035
+        },
+        "temperature": {
+          "avg": 54.048780487804876,
+          "std": 0.21808478995509087
+        },
+        "freq": {
+          "avg": 1240.6097560975609,
+          "std": 6.909696262428935
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 128,
+        "BLOCK_SIZE_N": 128,
+        "BLOCK_SIZE_K": 64,
+        "GROUP_SIZE_M": 16,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 4019.537925720215,
+      "gpu_metrics": {
+        "power": {
+          "avg": 323.70136585365856,
+          "std": 4.629046801211335
+        },
+        "temperature": {
+          "avg": 54,
+          "std": 0.0
+        },
+        "freq": {
+          "avg": 1318.1707317073171,
+          "std": 6.869870592028609
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 128,
+        "BLOCK_SIZE_N": 128,
+        "BLOCK_SIZE_K": 128,
+        "GROUP_SIZE_M": 8,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 4020.623359680176,
+      "gpu_metrics": {
+        "power": {
+          "avg": 324.30146341463416,
+          "std": 5.66506729041042
+        },
+        "temperature": {
+          "avg": 54.65853658536585,
+          "std": 0.4800914547021732
+        },
+        "freq": {
+          "avg": 1329.1463414634147,
+          "std": 7.407971974871922
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 64,
+        "BLOCK_SIZE_N": 256,
+        "BLOCK_SIZE_K": 128,
+        "GROUP_SIZE_M": 1,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 4021.7190170288086,
+      "gpu_metrics": {
+        "power": {
+          "avg": 323.17317073170733,
+          "std": 5.873025335814745
+        },
+        "temperature": {
+          "avg": 54.951219512195124,
+          "std": 0.21808478995509087
+        },
+        "freq": {
+          "avg": 1320.7317073170732,
+          "std": 8.843145340442796
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 128,
+        "BLOCK_SIZE_N": 128,
+        "BLOCK_SIZE_K": 128,
+        "GROUP_SIZE_M": 1,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 4026.460113525391,
+      "gpu_metrics": {
+        "power": {
+          "avg": 323.14163414634146,
+          "std": 6.082367457479438
+        },
+        "temperature": {
+          "avg": 55,
+          "std": 0.0
+        },
+        "freq": {
+          "avg": 1338.2926829268292,
+          "std": 7.874782226954039
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 128,
+        "BLOCK_SIZE_N": 128,
+        "BLOCK_SIZE_K": 128,
+        "GROUP_SIZE_M": 16,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 4027.2793579101567,
+      "gpu_metrics": {
+        "power": {
+          "avg": 323.00563414634144,
+          "std": 8.45716202918006
+        },
+        "temperature": {
+          "avg": 54.65853658536585,
+          "std": 0.4800914547021732
+        },
+        "freq": {
+          "avg": 1329.1463414634147,
+          "std": 11.062461244247945
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 64,
+        "BLOCK_SIZE_N": 256,
+        "BLOCK_SIZE_K": 128,
+        "GROUP_SIZE_M": 16,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 4035.8297729492188,
+      "gpu_metrics": {
+        "power": {
+          "avg": 324.95853658536583,
+          "std": 5.8042251209681766
+        },
+        "temperature": {
+          "avg": 54.65853658536585,
+          "std": 0.4800914547021732
+        },
+        "freq": {
+          "avg": 1315.6097560975609,
+          "std": 9.630363567333498
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 64,
+        "BLOCK_SIZE_N": 256,
+        "BLOCK_SIZE_K": 128,
+        "GROUP_SIZE_M": 8,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 4035.9936141967773,
+      "gpu_metrics": {
+        "power": {
+          "avg": 325.7580487804878,
+          "std": 5.12553404023044
+        },
+        "temperature": {
+          "avg": 54.707317073170735,
+          "std": 0.4606464174952623
+        },
+        "freq": {
+          "avg": 1317.0731707317073,
+          "std": 10.184277696288625
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 64,
+        "BLOCK_SIZE_N": 128,
+        "BLOCK_SIZE_K": 64,
+        "GROUP_SIZE_M": 16,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 4063.262710571289,
+      "gpu_metrics": {
+        "power": {
+          "avg": 321.36775609756097,
+          "std": 4.690466718677821
+        },
+        "temperature": {
+          "avg": 54,
+          "std": 0.0
+        },
+        "freq": {
+          "avg": 1231.4634146341464,
+          "std": 4.506093435425023
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 64,
+        "BLOCK_SIZE_N": 128,
+        "BLOCK_SIZE_K": 64,
+        "GROUP_SIZE_M": 8,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 4072.5708770751953,
+      "gpu_metrics": {
+        "power": {
+          "avg": 318.8663658536585,
+          "std": 3.7482913891271625
+        },
+        "temperature": {
+          "avg": 54,
+          "std": 0.0
+        },
+        "freq": {
+          "avg": 1228.5365853658536,
+          "std": 6.542543698652725
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 128,
+        "BLOCK_SIZE_N": 64,
+        "BLOCK_SIZE_K": 64,
+        "GROUP_SIZE_M": 8,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 4281.02653503418,
+      "gpu_metrics": {
+        "power": {
+          "avg": 323.00053658536586,
+          "std": 11.008064482681684
+        },
+        "temperature": {
+          "avg": 54.41463414634146,
+          "std": 0.4987789969564457
+        },
+        "freq": {
+          "avg": 1256.7073170731708,
+          "std": 23.36155378227123
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 256,
+        "BLOCK_SIZE_N": 128,
+        "BLOCK_SIZE_K": 64,
+        "GROUP_SIZE_M": 16,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 4286.709747314453,
+      "gpu_metrics": {
+        "power": {
+          "avg": 323.56678048780486,
+          "std": 8.424164099518116
+        },
+        "temperature": {
+          "avg": 55.853658536585364,
+          "std": 0.3578390427102734
+        },
+        "freq": {
+          "avg": 1344.1463414634147,
+          "std": 9.993900578877488
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 256,
+        "BLOCK_SIZE_N": 128,
+        "BLOCK_SIZE_K": 64,
+        "GROUP_SIZE_M": 1,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 4293.488655090332,
+      "gpu_metrics": {
+        "power": {
+          "avg": 323.98375609756096,
+          "std": 2.5473136514815713
+        },
+        "temperature": {
+          "avg": 55.853658536585364,
+          "std": 0.3578390427102734
+        },
+        "freq": {
+          "avg": 1362.8048780487804,
+          "std": 5.367585640654101
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 128,
+        "BLOCK_SIZE_N": 64,
+        "BLOCK_SIZE_K": 64,
+        "GROUP_SIZE_M": 1,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 4297.9021072387695,
+      "gpu_metrics": {
+        "power": {
+          "avg": 323.99360975609756,
+          "std": 3.4474429790646868
+        },
+        "temperature": {
+          "avg": 54.951219512195124,
+          "std": 0.21808478995509087
+        },
+        "freq": {
+          "avg": 1271.341463414634,
+          "std": 8.064148300030082
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 256,
+        "BLOCK_SIZE_N": 128,
+        "BLOCK_SIZE_K": 64,
+        "GROUP_SIZE_M": 8,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 4307.159042358398,
+      "gpu_metrics": {
+        "power": {
+          "avg": 324.36270731707316,
+          "std": 5.002118302498961
+        },
+        "temperature": {
+          "avg": 55.853658536585364,
+          "std": 0.3578390427102734
+        },
+        "freq": {
+          "avg": 1348.5365853658536,
+          "std": 8.08114336271672
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 128,
+        "BLOCK_SIZE_N": 64,
+        "BLOCK_SIZE_K": 64,
+        "GROUP_SIZE_M": 16,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 4316.385307312012,
+      "gpu_metrics": {
+        "power": {
+          "avg": 324.2680975609756,
+          "std": 4.10560703675399
+        },
+        "temperature": {
+          "avg": 54.21951219512195,
+          "std": 0.4190581774617469
+        },
+        "freq": {
+          "avg": 1261.0975609756097,
+          "std": 7.78718459409041
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 64,
+        "BLOCK_SIZE_N": 128,
+        "BLOCK_SIZE_K": 128,
+        "GROUP_SIZE_M": 16,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 4453.324813842773,
+      "gpu_metrics": {
+        "power": {
+          "avg": 324.4688536585366,
+          "std": 7.6762335085671225
+        },
+        "temperature": {
+          "avg": 54.90243902439025,
+          "std": 0.30040622902833486
+        },
+        "freq": {
+          "avg": 1323.658536585366,
+          "std": 15.65344970940521
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 64,
+        "BLOCK_SIZE_N": 128,
+        "BLOCK_SIZE_K": 128,
+        "GROUP_SIZE_M": 8,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 4469.350395202637,
+      "gpu_metrics": {
+        "power": {
+          "avg": 324.4332682926829,
+          "std": 5.847191295931708
+        },
+        "temperature": {
+          "avg": 54.951219512195124,
+          "std": 0.21808478995509087
+        },
+        "freq": {
+          "avg": 1322.9268292682927,
+          "std": 9.012186870850046
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 64,
+        "BLOCK_SIZE_N": 128,
+        "BLOCK_SIZE_K": 128,
+        "GROUP_SIZE_M": 1,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 4493.56803894043,
+      "gpu_metrics": {
+        "power": {
+          "avg": 323.3000243902439,
+          "std": 3.7409172570895306
+        },
+        "temperature": {
+          "avg": 55,
+          "std": 0.0
+        },
+        "freq": {
+          "avg": 1335.7317073170732,
+          "std": 5.76204994009902
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 128,
+        "BLOCK_SIZE_N": 64,
+        "BLOCK_SIZE_K": 128,
+        "GROUP_SIZE_M": 1,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 4802.201614379883,
+      "gpu_metrics": {
+        "power": {
+          "avg": 323.93348780487804,
+          "std": 6.499392683635722
+        },
+        "temperature": {
+          "avg": 55,
+          "std": 0.0
+        },
+        "freq": {
+          "avg": 1349.6341463414635,
+          "std": 7.8573408274077545
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 128,
+        "BLOCK_SIZE_N": 64,
+        "BLOCK_SIZE_K": 128,
+        "GROUP_SIZE_M": 16,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 4804.218864440918,
+      "gpu_metrics": {
+        "power": {
+          "avg": 323.9440243902439,
+          "std": 7.4013965658104155
+        },
+        "temperature": {
+          "avg": 54.853658536585364,
+          "std": 0.3578390427102734
+        },
+        "freq": {
+          "avg": 1344.1463414634147,
+          "std": 8.796479340081905
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 256,
+        "BLOCK_SIZE_N": 64,
+        "BLOCK_SIZE_K": 64,
+        "GROUP_SIZE_M": 1,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 4815.7183837890625,
+      "gpu_metrics": {
+        "power": {
+          "avg": 323.9857804878049,
+          "std": 5.477504301742697
+        },
+        "temperature": {
+          "avg": 55.048780487804876,
+          "std": 0.21808478995509087
+        },
+        "freq": {
+          "avg": 1359.1463414634147,
+          "std": 9.993900578877488
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 128,
+        "BLOCK_SIZE_N": 64,
+        "BLOCK_SIZE_K": 128,
+        "GROUP_SIZE_M": 8,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 4815.841293334961,
+      "gpu_metrics": {
+        "power": {
+          "avg": 323.97341463414637,
+          "std": 6.48701175031929
+        },
+        "temperature": {
+          "avg": 54.75609756097561,
+          "std": 0.43476935292624114
+        },
+        "freq": {
+          "avg": 1341.5853658536585,
+          "std": 7.536496565898831
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 256,
+        "BLOCK_SIZE_N": 64,
+        "BLOCK_SIZE_K": 64,
+        "GROUP_SIZE_M": 8,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 4818.892822265625,
+      "gpu_metrics": {
+        "power": {
+          "avg": 324.8632682926829,
+          "std": 9.246637694384894
+        },
+        "temperature": {
+          "avg": 55.41463414634146,
+          "std": 0.4987789969564457
+        },
+        "freq": {
+          "avg": 1350.3658536585365,
+          "std": 12.766667728034939
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 256,
+        "BLOCK_SIZE_N": 64,
+        "BLOCK_SIZE_K": 64,
+        "GROUP_SIZE_M": 16,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 4835.543060302734,
+      "gpu_metrics": {
+        "power": {
+          "avg": 324.55653658536585,
+          "std": 7.9647457495439244
+        },
+        "temperature": {
+          "avg": 55.31707317073171,
+          "std": 0.47111699132189566
+        },
+        "freq": {
+          "avg": 1341.219512195122,
+          "std": 12.082036655965647
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 256,
+        "BLOCK_SIZE_N": 64,
+        "BLOCK_SIZE_K": 128,
+        "GROUP_SIZE_M": 8,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 4866.027565002441,
+      "gpu_metrics": {
+        "power": {
+          "avg": 324.45073170731706,
+          "std": 10.801516143635553
+        },
+        "temperature": {
+          "avg": 55.90243902439025,
+          "std": 0.30040622902833486
+        },
+        "freq": {
+          "avg": 1366.8292682926829,
+          "std": 19.031424590692612
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 64,
+        "BLOCK_SIZE_N": 64,
+        "BLOCK_SIZE_K": 64,
+        "GROUP_SIZE_M": 1,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 4878.878746032715,
+      "gpu_metrics": {
+        "power": {
+          "avg": 324.11946341463414,
+          "std": 6.223680868656274
+        },
+        "temperature": {
+          "avg": 54.90243902439025,
+          "std": 0.30040622902833486
+        },
+        "freq": {
+          "avg": 1257.8048780487804,
+          "std": 5.367585640654101
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 256,
+        "BLOCK_SIZE_N": 64,
+        "BLOCK_SIZE_K": 128,
+        "GROUP_SIZE_M": 1,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 4881.664009094238,
+      "gpu_metrics": {
+        "power": {
+          "avg": 324.33573170731705,
+          "std": 1.7644115878160358
+        },
+        "temperature": {
+          "avg": 55.8780487804878,
+          "std": 0.3312945782245396
+        },
+        "freq": {
+          "avg": 1379.2682926829268,
+          "std": 3.2712718493263626
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 32,
+        "BLOCK_SIZE_N": 256,
+        "BLOCK_SIZE_K": 64,
+        "GROUP_SIZE_M": 8,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 4884.49031829834,
+      "gpu_metrics": {
+        "power": {
+          "avg": 323.5163414634146,
+          "std": 7.732974235731535
+        },
+        "temperature": {
+          "avg": 52.292682926829265,
+          "std": 0.4606464174952623
+        },
+        "freq": {
+          "avg": 1280.8536585365853,
+          "std": 14.573196244492413
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 32,
+        "BLOCK_SIZE_N": 256,
+        "BLOCK_SIZE_K": 64,
+        "GROUP_SIZE_M": 1,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 4889.057312011719,
+      "gpu_metrics": {
+        "power": {
+          "avg": 324.4161219512195,
+          "std": 6.313228465670793
+        },
+        "temperature": {
+          "avg": 52,
+          "std": 0.0
+        },
+        "freq": {
+          "avg": 1282.6829268292684,
+          "std": 7.590912410212108
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 256,
+        "BLOCK_SIZE_N": 64,
+        "BLOCK_SIZE_K": 128,
+        "GROUP_SIZE_M": 16,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 4889.323463439941,
+      "gpu_metrics": {
+        "power": {
+          "avg": 323.5651951219512,
+          "std": 9.25384668183861
+        },
+        "temperature": {
+          "avg": 56.46341463414634,
+          "std": 0.5957164164100968
+        },
+        "freq": {
+          "avg": 1360.6097560975609,
+          "std": 19.627631095958176
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 64,
+        "BLOCK_SIZE_N": 64,
+        "BLOCK_SIZE_K": 64,
+        "GROUP_SIZE_M": 16,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 4893.685760498047,
+      "gpu_metrics": {
+        "power": {
+          "avg": 322.9697073170732,
+          "std": 8.585526909409529
+        },
+        "temperature": {
+          "avg": 54.09756097560975,
+          "std": 0.30040622902833486
+        },
+        "freq": {
+          "avg": 1239.878048780488,
+          "std": 11.910489330735366
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 64,
+        "BLOCK_SIZE_N": 64,
+        "BLOCK_SIZE_K": 64,
+        "GROUP_SIZE_M": 8,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 4918.1184005737305,
+      "gpu_metrics": {
+        "power": {
+          "avg": 324.04448780487803,
+          "std": 7.684252813780762
+        },
+        "temperature": {
+          "avg": 54,
+          "std": 0.0
+        },
+        "freq": {
+          "avg": 1240.6097560975609,
+          "std": 8.38116354923494
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 32,
+        "BLOCK_SIZE_N": 256,
+        "BLOCK_SIZE_K": 64,
+        "GROUP_SIZE_M": 16,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 4962.6520919799805,
+      "gpu_metrics": {
+        "power": {
+          "avg": 322.94475609756097,
+          "std": 2.4476880395639564
+        },
+        "temperature": {
+          "avg": 52,
+          "std": 0.0
+        },
+        "freq": {
+          "avg": 1274.2682926829268,
+          "std": 3.2712718493263626
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 64,
+        "BLOCK_SIZE_N": 64,
+        "BLOCK_SIZE_K": 128,
+        "GROUP_SIZE_M": 16,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 5087.447052001953,
+      "gpu_metrics": {
+        "power": {
+          "avg": 324.4922682926829,
+          "std": 6.488067582201921
+        },
+        "temperature": {
+          "avg": 55,
+          "std": 0.0
+        },
+        "freq": {
+          "avg": 1295.121951219512,
+          "std": 9.841735421030224
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 64,
+        "BLOCK_SIZE_N": 64,
+        "BLOCK_SIZE_K": 128,
+        "GROUP_SIZE_M": 1,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 5115.361251831055,
+      "gpu_metrics": {
+        "power": {
+          "avg": 322.7905365853659,
+          "std": 1.9860374756982953
+        },
+        "temperature": {
+          "avg": 55,
+          "std": 0.0
+        },
+        "freq": {
+          "avg": 1320.7317073170732,
+          "std": 5.76204994009902
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 64,
+        "BLOCK_SIZE_N": 64,
+        "BLOCK_SIZE_K": 128,
+        "GROUP_SIZE_M": 8,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 5120.450592041016,
+      "gpu_metrics": {
+        "power": {
+          "avg": 324.46863414634146,
+          "std": 4.79378449012937
+        },
+        "temperature": {
+          "avg": 55,
+          "std": 0.0
+        },
+        "freq": {
+          "avg": 1293.658536585366,
+          "std": 8.064148300030082
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 32,
+        "BLOCK_SIZE_N": 128,
+        "BLOCK_SIZE_K": 64,
+        "GROUP_SIZE_M": 1,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 5260.339202880859,
+      "gpu_metrics": {
+        "power": {
+          "avg": 321.7936190476191,
+          "std": 4.058664161785865
+        },
+        "temperature": {
+          "avg": 50.857142857142854,
+          "std": 0.3541688016605732
+        },
+        "freq": {
+          "avg": 1272.857142857143,
+          "std": 10.771623580707782
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 32,
+        "BLOCK_SIZE_N": 128,
+        "BLOCK_SIZE_K": 64,
+        "GROUP_SIZE_M": 8,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 5293.895683288574,
+      "gpu_metrics": {
+        "power": {
+          "avg": 323.7284634146342,
+          "std": 3.1818163923894307
+        },
+        "temperature": {
+          "avg": 51,
+          "std": 0.0
+        },
+        "freq": {
+          "avg": 1274.2682926829268,
+          "std": 3.2712718493263626
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 32,
+        "BLOCK_SIZE_N": 128,
+        "BLOCK_SIZE_K": 64,
+        "GROUP_SIZE_M": 16,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 5319.8541259765625,
+      "gpu_metrics": {
+        "power": {
+          "avg": 324.19780487804877,
+          "std": 7.733810807808499
+        },
+        "temperature": {
+          "avg": 51.36585365853659,
+          "std": 0.48765241519834646
+        },
+        "freq": {
+          "avg": 1257.0731707317073,
+          "std": 21.005225830614677
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 32,
+        "BLOCK_SIZE_N": 256,
+        "BLOCK_SIZE_K": 128,
+        "GROUP_SIZE_M": 1,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 5543.352279663086,
+      "gpu_metrics": {
+        "power": {
+          "avg": 322.8241219512195,
+          "std": 1.6992673449919777
+        },
+        "temperature": {
+          "avg": 54.8780487804878,
+          "std": 0.3312945782245396
+        },
+        "freq": {
+          "avg": 1365.7317073170732,
+          "std": 3.2712718493263626
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 32,
+        "BLOCK_SIZE_N": 256,
+        "BLOCK_SIZE_K": 128,
+        "GROUP_SIZE_M": 8,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 5574.4511795043945,
+      "gpu_metrics": {
+        "power": {
+          "avg": 324.35043902439025,
+          "std": 2.8420603798017714
+        },
+        "temperature": {
+          "avg": 55,
+          "std": 0.0
+        },
+        "freq": {
+          "avg": 1364.2682926829268,
+          "std": 3.2712718493263626
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 32,
+        "BLOCK_SIZE_N": 256,
+        "BLOCK_SIZE_K": 128,
+        "GROUP_SIZE_M": 16,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 5613.844451904297,
+      "gpu_metrics": {
+        "power": {
+          "avg": 324.7381219512195,
+          "std": 8.329241691760187
+        },
+        "temperature": {
+          "avg": 54.707317073170735,
+          "std": 0.4606464174952623
+        },
+        "freq": {
+          "avg": 1355.4878048780488,
+          "std": 16.347969218253855
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 32,
+        "BLOCK_SIZE_N": 128,
+        "BLOCK_SIZE_K": 128,
+        "GROUP_SIZE_M": 1,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 5646.673889160156,
+      "gpu_metrics": {
+        "power": {
+          "avg": 323.82768292682925,
+          "std": 10.287513281738748
+        },
+        "temperature": {
+          "avg": 54.24390243902439,
+          "std": 0.43476935292624114
+        },
+        "freq": {
+          "avg": 1324.7560975609756,
+          "std": 15.888329817518388
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 32,
+        "BLOCK_SIZE_N": 128,
+        "BLOCK_SIZE_K": 128,
+        "GROUP_SIZE_M": 8,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 5676.574668884277,
+      "gpu_metrics": {
+        "power": {
+          "avg": 323.91019512195123,
+          "std": 4.438779377371172
+        },
+        "temperature": {
+          "avg": 54.073170731707314,
+          "std": 0.2636516548818748
+        },
+        "freq": {
+          "avg": 1322.9268292682927,
+          "std": 6.018264882432639
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 32,
+        "BLOCK_SIZE_N": 128,
+        "BLOCK_SIZE_K": 128,
+        "GROUP_SIZE_M": 16,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 5716.213760375977,
+      "gpu_metrics": {
+        "power": {
+          "avg": 324.09929268292683,
+          "std": 3.3977971190456797
+        },
+        "temperature": {
+          "avg": 54,
+          "std": 0.0
+        },
+        "freq": {
+          "avg": 1316.7073170731708,
+          "std": 6.285872661926204
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 128,
+        "BLOCK_SIZE_N": 32,
+        "BLOCK_SIZE_K": 64,
+        "GROUP_SIZE_M": 16,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 5844.828109741211,
+      "gpu_metrics": {
+        "power": {
+          "avg": 324.4541904761905,
+          "std": 6.190076035775937
+        },
+        "temperature": {
+          "avg": 54.904761904761905,
+          "std": 0.2971017571861746
+        },
+        "freq": {
+          "avg": 1293.9285714285713,
+          "std": 13.276410139871794
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 256,
+        "BLOCK_SIZE_N": 32,
+        "BLOCK_SIZE_K": 64,
+        "GROUP_SIZE_M": 16,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 5881.026573181152,
+      "gpu_metrics": {
+        "power": {
+          "avg": 323.5043809523809,
+          "std": 6.412528830163423
+        },
+        "temperature": {
+          "avg": 55,
+          "std": 0.0
+        },
+        "freq": {
+          "avg": 1329.2857142857142,
+          "std": 8.735366060392618
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 128,
+        "BLOCK_SIZE_N": 32,
+        "BLOCK_SIZE_K": 64,
+        "GROUP_SIZE_M": 8,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 5901.957092285156,
+      "gpu_metrics": {
+        "power": {
+          "avg": 323.43743902439024,
+          "std": 6.023541944108886
+        },
+        "temperature": {
+          "avg": 54.90243902439025,
+          "std": 0.30040622902833486
+        },
+        "freq": {
+          "avg": 1295.4878048780488,
+          "std": 10.476454436543673
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 256,
+        "BLOCK_SIZE_N": 32,
+        "BLOCK_SIZE_K": 64,
+        "GROUP_SIZE_M": 8,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 5902.735366821289,
+      "gpu_metrics": {
+        "power": {
+          "avg": 322.4363,
+          "std": 10.669023981986602
+        },
+        "temperature": {
+          "avg": 54.75,
+          "std": 0.4385290096535146
+        },
+        "freq": {
+          "avg": 1326,
+          "std": 12.152872405003999
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 128,
+        "BLOCK_SIZE_N": 32,
+        "BLOCK_SIZE_K": 64,
+        "GROUP_SIZE_M": 1,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 5967.923164367676,
+      "gpu_metrics": {
+        "power": {
+          "avg": 323.8158536585366,
+          "std": 3.372877358880507
+        },
+        "temperature": {
+          "avg": 55,
+          "std": 0.0
+        },
+        "freq": {
+          "avg": 1318.5365853658536,
+          "std": 4.506093435425023
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 128,
+        "BLOCK_SIZE_N": 32,
+        "BLOCK_SIZE_K": 128,
+        "GROUP_SIZE_M": 16,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 6007.61344909668,
+      "gpu_metrics": {
+        "power": {
+          "avg": 322.70131707317074,
+          "std": 7.924831340284239
+        },
+        "temperature": {
+          "avg": 55,
+          "std": 0.0
+        },
+        "freq": {
+          "avg": 1329.1463414634147,
+          "std": 8.796479340081905
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 128,
+        "BLOCK_SIZE_N": 32,
+        "BLOCK_SIZE_K": 128,
+        "GROUP_SIZE_M": 8,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 6034.1657638549805,
+      "gpu_metrics": {
+        "power": {
+          "avg": 324.1120487804878,
+          "std": 6.680701856658546
+        },
+        "temperature": {
+          "avg": 54.951219512195124,
+          "std": 0.21808478995509087
+        },
+        "freq": {
+          "avg": 1325.121951219512,
+          "std": 11.910489330735366
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 256,
+        "BLOCK_SIZE_N": 32,
+        "BLOCK_SIZE_K": 64,
+        "GROUP_SIZE_M": 1,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 6054.021072387695,
+      "gpu_metrics": {
+        "power": {
+          "avg": 324.16009523809527,
+          "std": 4.466806557259534
+        },
+        "temperature": {
+          "avg": 55,
+          "std": 0.0
+        },
+        "freq": {
+          "avg": 1336.4285714285713,
+          "std": 6.466208061135635
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 128,
+        "BLOCK_SIZE_N": 32,
+        "BLOCK_SIZE_K": 128,
+        "GROUP_SIZE_M": 1,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 6209.873886108398,
+      "gpu_metrics": {
+        "power": {
+          "avg": 323.78278048780487,
+          "std": 9.290055727798926
+        },
+        "temperature": {
+          "avg": 54.951219512195124,
+          "std": 0.21808478995509087
+        },
+        "freq": {
+          "avg": 1354.0243902439024,
+          "std": 16.09423468959933
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 32,
+        "BLOCK_SIZE_N": 64,
+        "BLOCK_SIZE_K": 64,
+        "GROUP_SIZE_M": 8,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 6308.638648986816,
+      "gpu_metrics": {
+        "power": {
+          "avg": 321.8740975609756,
+          "std": 11.476521637248972
+        },
+        "temperature": {
+          "avg": 49.4390243902439,
+          "std": 0.5936657514041415
+        },
+        "freq": {
+          "avg": 1284.5121951219512,
+          "std": 16.68850195676579
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 32,
+        "BLOCK_SIZE_N": 64,
+        "BLOCK_SIZE_K": 64,
+        "GROUP_SIZE_M": 1,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 6317.557792663574,
+      "gpu_metrics": {
+        "power": {
+          "avg": 323.0114146341463,
+          "std": 8.016897623069688
+        },
+        "temperature": {
+          "avg": 48.65853658536585,
+          "std": 0.4800914547021732
+        },
+        "freq": {
+          "avg": 1298.0487804878048,
+          "std": 8.935746246151451
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 256,
+        "BLOCK_SIZE_N": 32,
+        "BLOCK_SIZE_K": 128,
+        "GROUP_SIZE_M": 16,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 6318.960647583008,
+      "gpu_metrics": {
+        "power": {
+          "avg": 322.4126829268293,
+          "std": 8.948921131731533
+        },
+        "temperature": {
+          "avg": 54.90243902439025,
+          "std": 0.30040622902833486
+        },
+        "freq": {
+          "avg": 1385.8536585365853,
+          "std": 11.062461244247945
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 256,
+        "BLOCK_SIZE_N": 32,
+        "BLOCK_SIZE_K": 128,
+        "GROUP_SIZE_M": 8,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 6333.900833129883,
+      "gpu_metrics": {
+        "power": {
+          "avg": 320.74236585365855,
+          "std": 9.879951669305111
+        },
+        "temperature": {
+          "avg": 53.853658536585364,
+          "std": 0.4775445324656172
+        },
+        "freq": {
+          "avg": 1382.9268292682927,
+          "std": 13.918315709708626
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 32,
+        "BLOCK_SIZE_N": 64,
+        "BLOCK_SIZE_K": 64,
+        "GROUP_SIZE_M": 16,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 6357.329940795898,
+      "gpu_metrics": {
+        "power": {
+          "avg": 322.1978292682927,
+          "std": 3.9094375484360864
+        },
+        "temperature": {
+          "avg": 49.951219512195124,
+          "std": 0.21808478995509087
+        },
+        "freq": {
+          "avg": 1274.2682926829268,
+          "std": 7.463324963593313
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 64,
+        "BLOCK_SIZE_N": 64,
+        "BLOCK_SIZE_K": 256,
+        "GROUP_SIZE_M": 16,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 6437.529678344727,
+      "gpu_metrics": {
+        "power": {
+          "avg": 322.6770952380952,
+          "std": 6.886008400955192
+        },
+        "temperature": {
+          "avg": 54.95238095238095,
+          "std": 0.21554026870452117
+        },
+        "freq": {
+          "avg": 1402.142857142857,
+          "std": 7.5823010490619716
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 32,
+        "BLOCK_SIZE_N": 64,
+        "BLOCK_SIZE_K": 128,
+        "GROUP_SIZE_M": 8,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 6474.28092956543,
+      "gpu_metrics": {
+        "power": {
+          "avg": 324.32429268292685,
+          "std": 6.130041652566077
+        },
+        "temperature": {
+          "avg": 54,
+          "std": 0.0
+        },
+        "freq": {
+          "avg": 1311.5853658536585,
+          "std": 8.904986271062121
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 64,
+        "BLOCK_SIZE_N": 64,
+        "BLOCK_SIZE_K": 256,
+        "GROUP_SIZE_M": 8,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 6479.4011306762695,
+      "gpu_metrics": {
+        "power": {
+          "avg": 322.74373170731707,
+          "std": 9.406297741471908
+        },
+        "temperature": {
+          "avg": 54.48780487804878,
+          "std": 0.5060608273474739
+        },
+        "freq": {
+          "avg": 1399.7560975609756,
+          "std": 8.511111818689958
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 32,
+        "BLOCK_SIZE_N": 64,
+        "BLOCK_SIZE_K": 128,
+        "GROUP_SIZE_M": 16,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 6499.97314453125,
+      "gpu_metrics": {
+        "power": {
+          "avg": 322.912243902439,
+          "std": 11.330614905600859
+        },
+        "temperature": {
+          "avg": 53.853658536585364,
+          "std": 0.3578390427102734
+        },
+        "freq": {
+          "avg": 1298.4146341463415,
+          "std": 13.849143673448005
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 64,
+        "BLOCK_SIZE_N": 32,
+        "BLOCK_SIZE_K": 128,
+        "GROUP_SIZE_M": 16,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 6523.013153076172,
+      "gpu_metrics": {
+        "power": {
+          "avg": 323.55536585365854,
+          "std": 6.046664244672838
+        },
+        "temperature": {
+          "avg": 55,
+          "std": 0.0
+        },
+        "freq": {
+          "avg": 1311.5853658536585,
+          "std": 8.904986271062121
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 64,
+        "BLOCK_SIZE_N": 64,
+        "BLOCK_SIZE_K": 256,
+        "GROUP_SIZE_M": 1,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 6526.637954711914,
+      "gpu_metrics": {
+        "power": {
+          "avg": 317.5509756097561,
+          "std": 1.3937527127831029
+        },
+        "temperature": {
+          "avg": 54.170731707317074,
+          "std": 0.3809487514345101
+        },
+        "freq": {
+          "avg": 1410,
+          "std": 0.0
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 32,
+        "BLOCK_SIZE_N": 64,
+        "BLOCK_SIZE_K": 128,
+        "GROUP_SIZE_M": 1,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 6539.520034790039,
+      "gpu_metrics": {
+        "power": {
+          "avg": 322.07053658536586,
+          "std": 5.122781837525198
+        },
+        "temperature": {
+          "avg": 54,
+          "std": 0.0
+        },
+        "freq": {
+          "avg": 1320.7317073170732,
+          "std": 6.66717477738473
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 256,
+        "BLOCK_SIZE_N": 32,
+        "BLOCK_SIZE_K": 128,
+        "GROUP_SIZE_M": 1,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 6561.443786621094,
+      "gpu_metrics": {
+        "power": {
+          "avg": 323.9369523809524,
+          "std": 2.50111145003217
+        },
+        "temperature": {
+          "avg": 52.476190476190474,
+          "std": 0.6712963519208239
+        },
+        "freq": {
+          "avg": 1409.2857142857142,
+          "std": 3.2331040305678176
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 64,
+        "BLOCK_SIZE_N": 32,
+        "BLOCK_SIZE_K": 128,
+        "GROUP_SIZE_M": 8,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 6582.968368530273,
+      "gpu_metrics": {
+        "power": {
+          "avg": 323.890243902439,
+          "std": 6.125706048205743
+        },
+        "temperature": {
+          "avg": 55,
+          "std": 0.0
+        },
+        "freq": {
+          "avg": 1312.3170731707316,
+          "std": 8.95108659434776
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 64,
+        "BLOCK_SIZE_N": 32,
+        "BLOCK_SIZE_K": 64,
+        "GROUP_SIZE_M": 16,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 6595.020751953125,
+      "gpu_metrics": {
+        "power": {
+          "avg": 323.69958536585364,
+          "std": 9.144641335163474
+        },
+        "temperature": {
+          "avg": 54.73170731707317,
+          "std": 0.4485749794573054
+        },
+        "freq": {
+          "avg": 1292.9268292682927,
+          "std": 15.450550546667325
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 64,
+        "BLOCK_SIZE_N": 32,
+        "BLOCK_SIZE_K": 64,
+        "GROUP_SIZE_M": 8,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 6636.2982177734375,
+      "gpu_metrics": {
+        "power": {
+          "avg": 323.1624761904762,
+          "std": 8.564651289978563
+        },
+        "temperature": {
+          "avg": 54.714285714285715,
+          "std": 0.4572299568592125
+        },
+        "freq": {
+          "avg": 1291.7857142857142,
+          "std": 13.335329409240765
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 64,
+        "BLOCK_SIZE_N": 32,
+        "BLOCK_SIZE_K": 64,
+        "GROUP_SIZE_M": 1,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 6730.096588134766,
+      "gpu_metrics": {
+        "power": {
+          "avg": 323.79978048780487,
+          "std": 5.729784173562705
+        },
+        "temperature": {
+          "avg": 54.97560975609756,
+          "std": 0.15617376188860607
+        },
+        "freq": {
+          "avg": 1325.121951219512,
+          "std": 7.201371820532597
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 64,
+        "BLOCK_SIZE_N": 32,
+        "BLOCK_SIZE_K": 128,
+        "GROUP_SIZE_M": 1,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 6818.242568969727,
+      "gpu_metrics": {
+        "power": {
+          "avg": 323.24641463414633,
+          "std": 10.93917357704779
+        },
+        "temperature": {
+          "avg": 55.48780487804878,
+          "std": 0.5060608273474739
+        },
+        "freq": {
+          "avg": 1341.9512195121952,
+          "std": 11.666085932120067
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 32,
+        "BLOCK_SIZE_N": 128,
+        "BLOCK_SIZE_K": 256,
+        "GROUP_SIZE_M": 8,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 7120.015335083008,
+      "gpu_metrics": {
+        "power": {
+          "avg": 323.83459523809523,
+          "std": 1.4235695612039903
+        },
+        "temperature": {
+          "avg": 55,
+          "std": 0.0
+        },
+        "freq": {
+          "avg": 1410,
+          "std": 0.0
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 32,
+        "BLOCK_SIZE_N": 128,
+        "BLOCK_SIZE_K": 256,
+        "GROUP_SIZE_M": 1,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 7138.41667175293,
+      "gpu_metrics": {
+        "power": {
+          "avg": 317.79411904761906,
+          "std": 1.4196665393827441
+        },
+        "temperature": {
+          "avg": 54.04761904761905,
+          "std": 0.21554026870452117
+        },
+        "freq": {
+          "avg": 1410,
+          "std": 0.0
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 32,
+        "BLOCK_SIZE_N": 128,
+        "BLOCK_SIZE_K": 256,
+        "GROUP_SIZE_M": 16,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 7171.481552124023,
+      "gpu_metrics": {
+        "power": {
+          "avg": 323.082243902439,
+          "std": 8.490949236629806
+        },
+        "temperature": {
+          "avg": 54.78048780487805,
+          "std": 0.4190581774617469
+        },
+        "freq": {
+          "avg": 1404.1463414634147,
+          "std": 8.131915443515618
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 128,
+        "BLOCK_SIZE_N": 32,
+        "BLOCK_SIZE_K": 256,
+        "GROUP_SIZE_M": 8,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 7442.87223815918,
+      "gpu_metrics": {
+        "power": {
+          "avg": 317.7330487804878,
+          "std": 1.1259694478807944
+        },
+        "temperature": {
+          "avg": 55,
+          "std": 0.0
+        },
+        "freq": {
+          "avg": 1410,
+          "std": 0.0
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 128,
+        "BLOCK_SIZE_N": 32,
+        "BLOCK_SIZE_K": 256,
+        "GROUP_SIZE_M": 16,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 7449.0472412109375,
+      "gpu_metrics": {
+        "power": {
+          "avg": 315.5010487804878,
+          "std": 2.3400602123793726
+        },
+        "temperature": {
+          "avg": 55,
+          "std": 0.0
+        },
+        "freq": {
+          "avg": 1410,
+          "std": 0.0
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 128,
+        "BLOCK_SIZE_N": 32,
+        "BLOCK_SIZE_K": 256,
+        "GROUP_SIZE_M": 1,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 7575.654373168945,
+      "gpu_metrics": {
+        "power": {
+          "avg": 307.42634146341464,
+          "std": 0.9525292019081637
+        },
+        "temperature": {
+          "avg": 54,
+          "std": 0.0
+        },
+        "freq": {
+          "avg": 1410,
+          "std": 0.0
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 32,
+        "BLOCK_SIZE_N": 32,
+        "BLOCK_SIZE_K": 128,
+        "GROUP_SIZE_M": 16,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 8588.523559570312,
+      "gpu_metrics": {
+        "power": {
+          "avg": 324.31935714285714,
+          "std": 5.6922236035019536
+        },
+        "temperature": {
+          "avg": 54,
+          "std": 0.0
+        },
+        "freq": {
+          "avg": 1331.4285714285713,
+          "std": 6.466208061135635
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 32,
+        "BLOCK_SIZE_N": 32,
+        "BLOCK_SIZE_K": 128,
+        "GROUP_SIZE_M": 8,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 8597.514266967773,
+      "gpu_metrics": {
+        "power": {
+          "avg": 324.25214285714287,
+          "std": 5.9085847571776915
+        },
+        "temperature": {
+          "avg": 54,
+          "std": 0.0
+        },
+        "freq": {
+          "avg": 1337.857142857143,
+          "std": 5.961549268974563
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 32,
+        "BLOCK_SIZE_N": 32,
+        "BLOCK_SIZE_K": 128,
+        "GROUP_SIZE_M": 1,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 8758.476867675781,
+      "gpu_metrics": {
+        "power": {
+          "avg": 324.4391707317073,
+          "std": 3.830879239172377
+        },
+        "temperature": {
+          "avg": 54,
+          "std": 0.0
+        },
+        "freq": {
+          "avg": 1358.4146341463415,
+          "std": 7.536496565898831
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 32,
+        "BLOCK_SIZE_N": 32,
+        "BLOCK_SIZE_K": 64,
+        "GROUP_SIZE_M": 1,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 9045.053329467773,
+      "gpu_metrics": {
+        "power": {
+          "avg": 324.0692380952381,
+          "std": 1.7389844640819045
+        },
+        "temperature": {
+          "avg": 42.69047619047619,
+          "std": 1.0473682521046934
+        },
+        "freq": {
+          "avg": 1364.2857142857142,
+          "std": 3.2331040305678176
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 64,
+        "BLOCK_SIZE_N": 32,
+        "BLOCK_SIZE_K": 256,
+        "GROUP_SIZE_M": 8,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 9066.465225219727,
+      "gpu_metrics": {
+        "power": {
+          "avg": 299.1734761904762,
+          "std": 2.072036799726126
+        },
+        "temperature": {
+          "avg": 53,
+          "std": 0.0
+        },
+        "freq": {
+          "avg": 1410,
+          "std": 0.0
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 64,
+        "BLOCK_SIZE_N": 32,
+        "BLOCK_SIZE_K": 256,
+        "GROUP_SIZE_M": 16,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 9081.036911010742,
+      "gpu_metrics": {
+        "power": {
+          "avg": 297.0199285714286,
+          "std": 1.7820228625296566
+        },
+        "temperature": {
+          "avg": 53,
+          "std": 0.0
+        },
+        "freq": {
+          "avg": 1410,
+          "std": 0.0
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 32,
+        "BLOCK_SIZE_N": 32,
+        "BLOCK_SIZE_K": 64,
+        "GROUP_SIZE_M": 8,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 9098.680191040039,
+      "gpu_metrics": {
+        "power": {
+          "avg": 322.11639024390246,
+          "std": 8.916682530173563
+        },
+        "temperature": {
+          "avg": 45.65853658536585,
+          "std": 0.4800914547021732
+        },
+        "freq": {
+          "avg": 1353.2926829268292,
+          "std": 13.210306397731705
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 32,
+        "BLOCK_SIZE_N": 64,
+        "BLOCK_SIZE_K": 256,
+        "GROUP_SIZE_M": 16,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 9165.097045898438,
+      "gpu_metrics": {
+        "power": {
+          "avg": 303.1027317073171,
+          "std": 1.0203319318827127
+        },
+        "temperature": {
+          "avg": 53,
+          "std": 0.0
+        },
+        "freq": {
+          "avg": 1410,
+          "std": 0.0
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 32,
+        "BLOCK_SIZE_N": 32,
+        "BLOCK_SIZE_K": 64,
+        "GROUP_SIZE_M": 16,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 9168.660430908203,
+      "gpu_metrics": {
+        "power": {
+          "avg": 323.61653658536585,
+          "std": 8.20711478869877
+        },
+        "temperature": {
+          "avg": 47.41463414634146,
+          "std": 0.4987789969564457
+        },
+        "freq": {
+          "avg": 1342.6829268292684,
+          "std": 10.13024931674992
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 32,
+        "BLOCK_SIZE_N": 64,
+        "BLOCK_SIZE_K": 256,
+        "GROUP_SIZE_M": 8,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 9170.032730102539,
+      "gpu_metrics": {
+        "power": {
+          "avg": 300.26021951219514,
+          "std": 2.1367975747856343
+        },
+        "temperature": {
+          "avg": 53,
+          "std": 0.0
+        },
+        "freq": {
+          "avg": 1410,
+          "std": 0.0
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 64,
+        "BLOCK_SIZE_N": 32,
+        "BLOCK_SIZE_K": 256,
+        "GROUP_SIZE_M": 1,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 9303.388061523438,
+      "gpu_metrics": {
+        "power": {
+          "avg": 285.31409523809526,
+          "std": 1.5728712568765655
+        },
+        "temperature": {
+          "avg": 53,
+          "std": 0.0
+        },
+        "freq": {
+          "avg": 1410,
+          "std": 0.0
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 32,
+        "BLOCK_SIZE_N": 64,
+        "BLOCK_SIZE_K": 256,
+        "GROUP_SIZE_M": 1,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 9345.628204345703,
+      "gpu_metrics": {
+        "power": {
+          "avg": 290.2238571428571,
+          "std": 2.3964967579367613
+        },
+        "temperature": {
+          "avg": 53,
+          "std": 0.0
+        },
+        "freq": {
+          "avg": 1410,
+          "std": 0.0
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 32,
+        "BLOCK_SIZE_N": 32,
+        "BLOCK_SIZE_K": 256,
+        "GROUP_SIZE_M": 8,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 9822.228469848633,
+      "gpu_metrics": {
+        "power": {
+          "avg": 324.2090476190476,
+          "std": 4.470202957974275
+        },
+        "temperature": {
+          "avg": 55.404761904761905,
+          "std": 0.4967957724145469
+        },
+        "freq": {
+          "avg": 1392.857142857143,
+          "std": 5.312532024908598
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 32,
+        "BLOCK_SIZE_N": 32,
+        "BLOCK_SIZE_K": 256,
+        "GROUP_SIZE_M": 16,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 9827.880935668945,
+      "gpu_metrics": {
+        "power": {
+          "avg": 323.88538095238096,
+          "std": 9.04072541054624
+        },
+        "temperature": {
+          "avg": 55.26190476190476,
+          "std": 0.44500061986933037
+        },
+        "freq": {
+          "avg": 1386.4285714285713,
+          "std": 11.058917287327194
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 32,
+        "BLOCK_SIZE_N": 32,
+        "BLOCK_SIZE_K": 256,
+        "GROUP_SIZE_M": 1,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 10203.392105102539,
+      "gpu_metrics": {
+        "power": {
+          "avg": 321.8721463414634,
+          "std": 5.941132996158968
+        },
+        "temperature": {
+          "avg": 55.5609756097561,
+          "std": 0.5024331043932554
+        },
+        "freq": {
+          "avg": 1408.9024390243903,
+          "std": 3.954774823228122
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 256,
+        "BLOCK_SIZE_N": 256,
+        "BLOCK_SIZE_K": 64,
+        "GROUP_SIZE_M": 8,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 252919.09912109375,
+      "gpu_metrics": {
+        "power": {
+          "avg": 191.74994,
+          "std": 1.0112782658696893
+        },
+        "temperature": {
+          "avg": 41,
+          "std": 0.0
+        },
+        "freq": {
+          "avg": 1410,
+          "std": 0.0
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 256,
+        "BLOCK_SIZE_N": 256,
+        "BLOCK_SIZE_K": 64,
+        "GROUP_SIZE_M": 16,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 252952.1875,
+      "gpu_metrics": {
+        "power": {
+          "avg": 191.72953846153845,
+          "std": 1.2047651217111597
+        },
+        "temperature": {
+          "avg": 41,
+          "std": 0.0
+        },
+        "freq": {
+          "avg": 1410,
+          "std": 0.0
+        }
+      }
+    },
+    {
+      "batch_size": 8192,
+      "config": {
+        "BLOCK_SIZE_M": 256,
+        "BLOCK_SIZE_N": 256,
+        "BLOCK_SIZE_K": 64,
+        "GROUP_SIZE_M": 1,
+        "num_warps": 8,
+        "num_stages": 3
+      },
+      "latency_us": 253253.61083984375,
+      "gpu_metrics": {
+        "power": {
+          "avg": 191.60833333333335,
+          "std": 3.0070433762529403
+        },
+        "temperature": {
+          "avg": 42,
+          "std": 0.0
+        },
+        "freq": {
+          "avg": 1410,
+          "std": 0.0
+        }
+      }
+    }
+  ]
+}

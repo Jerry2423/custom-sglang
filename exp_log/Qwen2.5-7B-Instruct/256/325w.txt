@@ -1,0 +1,12 @@
+====== Offline Throughput Benchmark Result =======
+Backend:                                 engine
+Successful requests:                     1000
+Benchmark duration (s):                  58.85
+Total input tokens:                      302118
+Total generated tokens:                  195775
+Last generation throughput (tok/s):      72.76
+Request throughput (req/s):              16.99
+Input token throughput (tok/s):          5133.72
+Output token throughput (tok/s):         3326.69
+Total token throughput (tok/s):          8460.41
+==================================================

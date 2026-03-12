@@ -1,0 +1,8 @@
+{
+    "8192": {
+        "BLOCK_M": 256,
+        "BLOCK_N": 64,
+        "num_warps": 8,
+        "num_stages": 4
+    }
+}
