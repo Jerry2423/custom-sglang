@@ -55,6 +55,7 @@ import json
 import logging
 import multiprocessing
 import os
+import sys
 import time
 from types import SimpleNamespace
 from typing import Tuple
@@ -62,6 +63,14 @@ from typing import Tuple
 import numpy as np
 import torch
 import torch.distributed as dist
+
+# Import GPU power monitor
+try:
+    from benchmark.kernels.gpu_power_monitor import GPUPowerMonitor
+    GPU_POWER_MONITOR_AVAILABLE = True
+except ImportError:
+    GPU_POWER_MONITOR_AVAILABLE = False
+    print("Warning: GPUPowerMonitor not available. Install nvidia-ml-py to enable power monitoring.")
 
 from sglang.srt.configs.model_config import ModelConfig
 from sglang.srt.distributed.parallel_state import destroy_distributed_environment
@@ -178,6 +187,8 @@ class BenchArgs:
     profile_activities: Tuple[str] = ("CPU", "GPU")
     profile_stage: str = "all"
     profile_filename_prefix: str = "profile"
+    monitor_stage: str = ""
+    monitor_output_prefix: str = "monitor"
 
     @staticmethod
     def add_cli_args(parser: argparse.ArgumentParser):
@@ -232,6 +243,19 @@ class BenchArgs:
             default=BenchArgs.profile_filename_prefix,
             help="Prefix of the profiling file names. The full profiling result file(s) be "
             '"[profile_filename_prefix]_batch[batch_size]_input[input_len]_output[output_len].trace.json.gz"',
+        )
+        parser.add_argument(
+            "--monitor-stage",
+            type=str,
+            default=BenchArgs.monitor_stage,
+            choices=["", "prefill", "decode"],
+            help="Which stage to monitor GPU power/temperature/frequency: prefill or decode. Empty string disables monitoring.",
+        )
+        parser.add_argument(
+            "--monitor-output-prefix",
+            type=str,
+            default=BenchArgs.monitor_output_prefix,
+            help="Prefix of the monitoring output JSON files.",
         )
 
     @classmethod
@@ -441,6 +465,68 @@ def _save_profile_trace_results(profiler, filename):
     )
 
 
+def _save_monitor_results(
+    monitor_results,
+    model_name,
+    batch_size,
+    input_len,
+    output_len,
+    stage,
+    output_prefix,
+    rank_print,
+):
+    """Save GPU monitoring results to JSON file.
+    
+    Args:
+        monitor_results: Dict with 'power', 'temperature', 'freq' keys from GPUPowerMonitor.monitor()
+        model_name: Name of the model being benchmarked
+        batch_size: Batch size
+        input_len: Input sequence length
+        output_len: Output sequence length
+        stage: Stage name (prefill or decode)
+        output_prefix: Prefix for output filename
+        rank_print: Print function (only prints on rank 0)
+    """
+    if monitor_results is None:
+        return
+    
+    output_dir = _get_torch_profiler_output_dir()
+    filename = os.path.join(
+        output_dir,
+        f"{output_prefix}_batch{batch_size}_input{input_len}_output{output_len}_{stage}.json"
+    )
+    
+    # Format the output according to user requirements
+    output_data = {
+        "model_name": model_name,
+        "batch_size": batch_size,
+        "input_len": input_len,
+        "output_len": output_len,
+        "stage": stage,
+        "power_W": {
+            "raw": monitor_results["power"]["raw"],
+            "avg": monitor_results["power"]["avg"],
+            "std": monitor_results["power"]["std"],
+        },
+        "clock_freq_MHz": {
+            "raw": monitor_results["freq"]["raw"],
+            "avg": monitor_results["freq"]["avg"],
+            "std": monitor_results["freq"]["std"],
+        },
+        "temperature_C": {
+            "raw": monitor_results["temperature"]["raw"],
+            "avg": monitor_results["temperature"]["avg"],
+            "std": monitor_results["temperature"]["std"],
+        },
+    }
+    
+    os.makedirs(output_dir, exist_ok=True)
+    with open(filename, "w") as f:
+        json.dump(output_data, f, indent=2)
+    
+    rank_print(f"GPU monitoring results saved to {filename}")
+
+
 def correctness_test(
     server_args,
     port_args,
@@ -510,6 +596,9 @@ def latency_test_run_once(
     profile_filename_prefix,
     profile_stage,
     tp_rank,
+    monitor_stage="",
+    monitor_output_prefix="monitor",
+    model_name="",
 ):
     max_batch_size = model_runner.max_total_num_tokens // (input_len + output_len)
     if batch_size > max_batch_size:
@@ -539,6 +628,7 @@ def latency_test_run_once(
             rank_print=rank_print,
         )
 
+    # Step 1: Measure prefill timing
     synchronize(device)
     tic = time.perf_counter()
     next_token_ids, _, batch = extend(reqs, model_runner)
@@ -566,9 +656,68 @@ def latency_test_run_once(
     measurement_results["prefill_latency"] = prefill_latency
     measurement_results["prefill_throughput"] = throughput
 
+    # Step 2: GPU monitoring for prefill (separate from timing)
+    enable_monitor_prefill = monitor_stage == "prefill" and GPU_POWER_MONITOR_AVAILABLE
+    if enable_monitor_prefill:
+        try:
+            gpu_monitor = GPUPowerMonitor(device_id=tp_rank, interval=0.01, cuda_device_id=tp_rank)
+            rank_print(f"Starting GPU monitoring for prefill stage (5s duration, 10ms sampling)...")
+            
+            # Clear pools and recreate batch for monitoring
+            model_runner.req_to_token_pool.clear()
+            model_runner.token_to_kv_pool_allocator.clear()
+            
+            # Recreate requests for monitoring
+            monitor_reqs = []
+            for req in reqs:
+                new_req = Req(
+                    rid=req.rid,
+                    origin_input_text=req.origin_input_text,
+                    origin_input_ids=req.origin_input_ids.copy(),
+                    sampling_params=req.sampling_params,
+                )
+                new_req.fill_ids = new_req.origin_input_ids
+                new_req.extend_input_len = len(new_req.fill_ids) - len(new_req.prefix_indices)
+                new_req.logprob_start_len = len(new_req.origin_input_ids) - 1
+                monitor_reqs.append(new_req)
+            
+            # Run monitoring for 5 seconds
+            monitor_results = gpu_monitor.monitor(
+                lambda: extend(monitor_reqs, model_runner),
+                latency_s=prefill_latency,
+                duration=5.0,
+                sampling_interval=0.01,
+                output_file=None,
+            )
+            
+            # Save monitoring results
+            _save_monitor_results(
+                monitor_results,
+                model_name,
+                batch_size,
+                input_len,
+                output_len,
+                "prefill",
+                monitor_output_prefix,
+                rank_print,
+            )
+            
+            # Restore state for decode
+            model_runner.req_to_token_pool.clear()
+            model_runner.token_to_kv_pool_allocator.clear()
+            
+            # Re-run prefill to get proper state for decode
+            next_token_ids, _, batch = extend(reqs, model_runner)
+            synchronize(device)
+            
+        except Exception as e:
+            rank_print(f"Failed to run GPU monitoring for prefill: {e}")
+
     decode_latencies = []
     profile_step_of_interest = output_len // 2
     enable_profile_decode = profile and profile_stage in ["all", "decode"]
+    
+    # Step 1: Measure decode timing
     for i in range(output_len - 1):
         synchronize(device)
         profiler = None
@@ -621,6 +770,41 @@ def latency_test_run_once(
     )
     measurement_results["total_latency"] = tot_latency
     measurement_results["overall_throughput"] = throughput
+
+    # Step 2: GPU monitoring for decode (separate from timing)
+    enable_monitor_decode = monitor_stage == "decode" and GPU_POWER_MONITOR_AVAILABLE
+    if enable_monitor_decode and len(decode_latencies) > 0:
+        try:
+            gpu_monitor = GPUPowerMonitor(device_id=tp_rank, interval=0.01, cuda_device_id=tp_rank)
+            rank_print(f"Starting GPU monitoring for decode stage (5s duration, 10ms sampling)...")
+            
+            # Use median decode latency for monitoring calculation
+            single_decode_latency = np.median(decode_latencies)
+            
+            # Run monitoring for 5 seconds
+            monitor_results = gpu_monitor.monitor(
+                lambda: decode(next_token_ids, batch, model_runner),
+                latency_s=single_decode_latency,
+                duration=5.0,
+                sampling_interval=0.01,
+                output_file=None,
+            )
+            
+            # Save monitoring results
+            _save_monitor_results(
+                monitor_results,
+                model_name,
+                batch_size,
+                input_len,
+                output_len,
+                "decode",
+                monitor_output_prefix,
+                rank_print,
+            )
+            
+        except Exception as e:
+            rank_print(f"Failed to run GPU monitoring for decode: {e}")
+
     return measurement_results
 
 
@@ -670,6 +854,9 @@ def latency_test(
         profile_filename_prefix="",
         profile_stage="all",
         tp_rank=tp_rank,
+        monitor_stage="",
+        monitor_output_prefix=bench_args.monitor_output_prefix,
+        model_name=server_args.model_path,
     )
 
     rank_print("Benchmark ...")
@@ -720,6 +907,9 @@ def latency_test(
             bench_args.profile_filename_prefix,
             bench_args.profile_stage,
             tp_rank,
+            monitor_stage=bench_args.monitor_stage if tp_rank == 0 else "",
+            monitor_output_prefix=bench_args.monitor_output_prefix,
+            model_name=server_args.model_path,
         )
         if ret is not None:
             result_list.append(ret)
